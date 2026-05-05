@@ -111,7 +111,7 @@ The analysis follows STRIDE methodology and traces data flow across trust bounda
 | -------------------------------------------- | ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | D-1: Volumetric attack on Edge Gateway       | Cloudflare Workers | MEDIUM   | Cloudflare DDoS protection (L3/L4/L7). Token bucket rate limiting (100 req/min/IP). WAF rules for bot detection.                              |
 | D-2: AI inference cost attack (mass uploads) | Vertex AI          | HIGH     | Rate limit: 10 analyses per wallet per day. Cost cap: $500/day circuit breaker on inference spend. Queue-based processing with backpressure.  |
-| D-3: Solana program spam                     | somagraph-core     | MEDIUM   | Each instruction requires SOL for rent + transaction fee. Attestation PDA creation requires user to pay rent. Economic disincentive for spam. |
+| D-3: Solana program spam                     | somagraph-engine     | MEDIUM   | Each instruction requires SOL for rent + transaction fee. Attestation PDA creation requires user to pay rent. Economic disincentive for spam. |
 
 ### 4.6 Elevation of Privilege
 

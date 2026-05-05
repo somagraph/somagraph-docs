@@ -8,7 +8,7 @@
 
 Biological age is the single most predictive metric of future health outcomes, yet it remains inaccessible to the vast majority of the global population. Premium longevity services gate the science behind subscription paywalls exceeding $500 per year. Mainstream medicine treats lab values as binary signals and ignores the optimization frontier where most people live. Somagraph closes that gap.
 
-The Somagraph protocol accepts unstructured medical documents, extracts biomarker data through multimodal AI, computes biological age using the Levine PhenoAge formula and the Klemera-Doubal method, and returns a prioritized action plan in plain language. Each analysis costs roughly $5 or 1,000 $SOMA tokens. Every token payment is permanently burned. Every USDC payment triggers a 50% buyback-and-burn cycle. The result is a protocol where usage creates structural deflation.
+The Somagraph protocol accepts unstructured medical documents, extracts biomarker data through multimodal AI, computes biological age using the Levine PhenoAge formula and the Klemera-Doubal method, and returns a prioritized action plan in plain language. Each analysis costs roughly $5 or 1,000 $SOMAGRAPH tokens. Every token payment is permanently burned. Every USDC payment triggers a 50% buyback-and-burn cycle. The result is a protocol where usage creates structural deflation.
 
 This paper describes the scientific foundations, protocol architecture, token mechanics, threat model, and roadmap of the Somagraph system.
 
@@ -109,7 +109,7 @@ The Somagraph Anchor program on Solana Mainnet provides four instructions:
 
 1. `initialize_protocol` — one-time setup of treasury and configuration PDAs
 2. `record_analysis` — immutable attestation linking wallet, panel hash, PhenoAge, longevity score, and timestamp
-3. `burn_payment` — SPL Token-2022 burn of 1,000 $SOMA
+3. `burn_payment` — SPL Token-2022 burn of 1,000 $SOMAGRAPH
 4. `usdc_buyback_burn` — cron-triggered USDC → SOMAGRAPH swap via Jupiter, followed by burn
 
 The program stores attestation records in PDAs derived from `[b"attestation", wallet, nonce]`. Each user's analysis history is enumerable on-chain without exposing any health data.
@@ -144,9 +144,9 @@ No presale. No insider allocation. No seed round. All community supply enters th
 
 Every paid analysis triggers one of two burn vectors:
 
-**Vector 1 — Direct Token Burn:** User pays 1,000 $SOMA. The entire amount is permanently destroyed via SPL burn instruction.
+**Vector 1 — Direct Token Burn:** User pays 1,000 $SOMAGRAPH. The entire amount is permanently destroyed via SPL burn instruction.
 
-**Vector 2 — USDC Buyback-and-Burn:** User pays $5 USDC. The protocol splits the fee 50/50. Half enters the protocol treasury (operations, compute, partnerships). Half is used to buy $SOMA on Jupiter every 24 hours, and the acquired tokens are burned.
+**Vector 2 — USDC Buyback-and-Burn:** User pays $5 USDC. The protocol splits the fee 50/50. Half enters the protocol treasury (operations, compute, partnerships). Half is used to buy $SOMAGRAPH on Jupiter every 24 hours, and the acquired tokens are burned.
 
 The user always pays whichever option is cheaper in USD terms. At low token prices, token payment dominates (users get access at sub-$1 costs). At high token prices, USDC payment dominates (users pay a fixed $5, and the buyback maintains demand).
 
@@ -154,8 +154,8 @@ The user always pays whichever option is cheaper in USD terms. At low token pric
 
 At 100 analyses per day with 80% token / 20% USDC split:
 
-- Direct burn: 80,000 $SOMA per day
-- Buyback burn: ~50,000 $SOMA per day (at $0.001/token)
+- Direct burn: 80,000 $SOMAGRAPH per day
+- Buyback burn: ~50,000 $SOMAGRAPH per day (at $0.001/token)
 - Annual burn: ~47.5M tokens (4.75% of total supply)
 
 At 1,000 analyses per day: ~475M tokens burned annually (47.5% of supply). The token is structurally deflationary when the product has usage.
@@ -193,7 +193,7 @@ US access will be evaluated after entity formation and HIPAA-compliance audit.
 | Phase            | Timeline    | Milestone                                                                                                                          |
 | ---------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | V0 — MVP         | Weeks 1-2   | Landing page, PDF upload, PhenoAge scoring, slider playground, wallet connect, USDC payments, famous bio ages, Twitter share cards |
-| V0.5 — Token     | Week 3      | $SOMA PumpFun launch, burn gate, live burn dashboard                                                                               |
+| V0.5 — Token     | Week 3      | $SOMAGRAPH PumpFun launch, burn gate, live burn dashboard                                                                               |
 | V1 — Cohort      | Weeks 4-8   | Cohort percentile comparison, panel history tracking, Telegram bot, Apple Health import                                            |
 | V2 — Integration | Months 3-4  | Quest Diagnostics API, multi-language support, ethnicity-specific calibration                                                      |
 | V3 — Research    | Months 5-12 | Anonymous cohort research participation, genetic risk overlay, longitudinal studies                                                |
@@ -202,7 +202,7 @@ US access will be evaluated after entity formation and HIPAA-compliance audit.
 
 ## 8. Risk Disclosure
 
-$SOMA is a utility token. It is not a security, not an investment contract, and confers no equity. Token holders own no claim on Somagraph protocol revenue. Past performance of similar projects does not predict Somagraph's outcome. The protocol does not provide medical advice. Smart contract risk is real: bugs, exploits, and economic failures are possible. Audit reports will be published before mainnet. Do not deploy capital you cannot afford to lose.
+$SOMAGRAPH is a utility token. It is not a security, not an investment contract, and confers no equity. Token holders own no claim on Somagraph protocol revenue. Past performance of similar projects does not predict Somagraph's outcome. The protocol does not provide medical advice. Smart contract risk is real: bugs, exploits, and economic failures are possible. Audit reports will be published before mainnet. Do not deploy capital you cannot afford to lose.
 
 ---
 

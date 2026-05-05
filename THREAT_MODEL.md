@@ -22,7 +22,7 @@ The analysis follows STRIDE methodology and traces data flow across trust bounda
 | User wallet address        | Pseudonymous PII                   | Zone 1-4                            | MEDIUM      |
 | PhenoAge / longevity score | Derived health metric              | Zone 1-4                            | MEDIUM      |
 | Protocol treasury USDC     | Financial asset                    | Zone 4 (Solana multisig)            | CRITICAL    |
-| $SOMA token balance        | Financial asset                    | Zone 4 (user wallets)               | HIGH        |
+| $SOMAGRAPH token balance        | Financial asset                    | Zone 4 (user wallets)               | HIGH        |
 | AI inference prompts       | Operational data                   | Zone 2 (ephemeral)                  | LOW         |
 
 ---
